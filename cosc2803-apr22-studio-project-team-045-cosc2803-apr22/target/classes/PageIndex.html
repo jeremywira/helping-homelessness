@@ -1,0 +1,57 @@
+<!-- <!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"> -->
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="common.css" />
+        <link rel = "icon" href = "homelesslogo.png" type = "image/x-icon">
+</head>
+
+<body>
+    <div class='header'>
+        <h1>
+            <a href='/'><img src='homelesslogo.png' class='top-image' alt='Homeless Logo' height='50'></a>   
+        </h1>
+    </div>
+    <div class='topnav'>
+        <a href='/'>Home</a>
+        <a href='mission.html'>Our Mission</a>
+        <a href='page3.html'>LGA Statistics</a>
+        <a href='page5.html'>Advanced Statistics</a>
+        <a href='page6.html'>Trends</a>
+    </div>
+
+        <!-- // Add Div for page Content -->
+<div class='content'>
+        
+
+        <!-- // Add HTML for the list of pages (as well as topnav) -->
+
+        <img src="indexhomelessimage.png" alt="homeless person sleeping" width="100%">
+            <div class="dropdown">
+            &nbsp;
+            &nbsp;
+                <div class ='index_drop'>
+                <h1>Population Year:</h1>
+                <form action="/" method="post">
+                    <select name='year_select' id='year_select'>
+                        <option th:each="years : ${year}" th:text="${years}" type="dropdown"></option>
+                    </select>
+                    <button type='submit'>Submit</button>
+                </form>
+                </div>   
+            
+            <h1  class="heading_one" th:text="${year_chosen}"></h1>
+            <h1 class="pop_index" th:text="${population_index}"></h1>    
+            <h1 class='lga_index' th:text="${lga_index}"></h1>
+            <h1 class='heading_two'>Total local Government Areas:</h1> 
+
+        <!-- // Close Content div -->
+</div>
+
+        <!-- // Footer -->
+            <div class='footer'>
+                <p>Homelessness Statistics Home Page</p>
+            </div>
+
+        <!-- // Finish the HTML webpage -->
+</body></html>

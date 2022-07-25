@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+               <title>Advanced Statistics</title>
+
+        <!-- // Add some CSS (external file) -->
+<link rel='stylesheet' type='text/css' href='common.css' />
+<link rel = "icon" href = "homelesslogo.png" type = "image/x-icon">
+</head>
+
+        <!-- // Add the body -->
+<body>
+
+        <!-- // Add header content block -->
+            <div class='header'>
+                <h1>
+                <a href='/'><img src='homelesslogo.png' class='top-image' alt='RMIT logo' height='50'></a>   
+                </h1>
+            </div>
+        <!-- // Add the topnav
+        // This uses a Java v15+ Text Block -->
+            <div class='topnav'>
+                <a href='/'>Home</a>
+                <a href='mission.html'>Our Mission</a>
+                <a href='page3.html'>LGA Statistics</a>
+                <a href='page5.html'>Advanced Statistics</a>
+                <a href='page6.html'>Trends</a>
+            </div>
+
+        <!-- // Add Div for page Content -->
+<div class='content'>
+   
+    <div class="ST31_basic">
+        <form action="/page5.html" method="post">
+            <label class="centered_text" for="ST31_lga">LGA:</label>  
+                <select name="ST31_lga" id="ST31_lga">
+                    <option th:each="LGA : ${LGA}" th:text="${LGA}" type="dropdown"></option>
+                </select>  
+            <br>
+            <br>    
+            <label for="ST31_state">STATE:</label>  
+            <br>
+                <select name="ST31_state" id="ST31_state">
+                    <option th:each="states : ${States}" th:text="${states}" type="dropdown"></option>
+                </select>
+            <br> 
+            <br>
+            <label for="ST31_sex">SEX:</label>  
+            <br>
+                <select name="ST31_sex" id="ST31_sex">
+                    <option th:each="sex : ${Sex}" th:text="${sex}" type="dropdown"></option>
+                </select>
+            <br> 
+            <br> 
+            <label for="ST31_agelower">AGE</label>
+            <br>
+                <p1>Range:</p1>
+                <select name="ST31_agelower" id="ST31_agelower">
+                    <option th:each="age_min : ${Age_min}" th:text="${age_min}" type="dropdown"></option>
+                </select>
+               <!-- <br>
+                <p1>Upper:</p1>
+                <select name="ST31_ageupper" id="ST31_ageupper">
+                    <option th:each="age_max : ${Age_max}" th:text="${age_max}" type="dropdown"></option>
+                </select>
+                -->
+                <br>
+                <br>
+                <label for="ST31_income">Median Weekly Income</label>
+                <br>
+                <p1>Lower:</p1> 
+                    <select name="ST31_lowincome" id="ST31_lowincome">
+                        <option selected>min</option>
+                        <option th:each="range : ${value_range}" th:text="${range}" type="dropdown"></option>
+                    </select> 
+                <br>
+                <p1>Upper:</p1> 
+                    <select name="ST31_highincome" id="ST31_highincome">
+                        <option selected>max</option>
+                        <option th:each="range : ${value_range}" th:text="${range}" type="dropdown"></option>
+                    </select>  
+                <br>
+                <br>
+                <label for="ST31_mortgage">Median Monthly Mortgage</label>
+                <br>
+                <p1>Lower:</p1> 
+                    <select name="ST31_lowmort" id="ST31_lowmort">
+                        <option selected>min</option>
+                        <option th:each="range : ${value_range}" th:text="${range}" type="dropdown"></option>
+                    </select> 
+                <br>
+                <p1>Upper:</p1> 
+                    <select name="ST31_highmort" id="ST31_highmort">
+                        <option selected>max</option>
+                        <option th:each="range : ${value_range}" th:text="${range}" type="dropdown"></option>
+                    </select>
+                <br>
+                <br>  
+                <label for="ST31_rent">Median Weekly Rent</label>
+                <br>
+                    <p1>Lower:</p1>
+                    <select name="ST31_lowrent" id="ST31_lowrent">
+                        <option selected>min</option>
+                        <option th:each="range : ${rent_range}" th:text="${range}" type="dropdown"></option>
+                    </select>
+               <br>
+                    <p1>Upper:</p1>
+                    <select name="ST31_highrent" id="ST31_highrent">
+                        <option selected>max</option>
+                        <option th:each="range : ${rent_range}" th:text="${range}" type="dropdown"></option>
+                    </select>   
+                <br>
+                <br>
+                    <p1>Sort by:</p1>
+                <br>
+                    <select name="ST31_order" id="ST31_order">
+                        <option>Ascending</option>
+                        <option>Descending</option>
+                    </select>  
+                <br>
+                    <select name="ST31_mediansort" id="ST31_mediansort">
+                        <option>Income</option>
+                        <option>Age</option>
+                        <option>Rent</option>
+                        <option>Mortgage</option>
+                    </select> 
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="lefttop_ST31">
+        <b>LGA: </b>
+        <p1 th:text="${lga}"></p1>
+        <br>
+        <b>Total Homeless to population ratio in LGA: </b>
+        <p1 th:text="${ratio_num}"></p1>
+        <br>
+        <br>
+        <b>LGA Household Information</b>
+    </div>
+
+    <div class="righttop_ST31">
+        <b>Total Homeless to population ratio in group:</b>
+        <p1 th:text="${group_ratio}"></p1>
+        <br>
+        <br>
+        <b>Group Summary Information</b>
+    </div>
+
+    <!--/<div class="leftmiddle_ST31">
+        <b>LGA Household Information</b>
+    </div> -->
+
+    
+
+    <div class="lga_household">
+        <b>Region: </b>
+        <p1 th:text="${region}"></p1>
+        <br>
+        <b>Population: </b>
+        <p1 th:text="${printPop}"></p1>
+        <br>
+        <b>Median Age: </b>
+        <p1 th:text="${median_ageState}"></p1>
+        <br>
+        <b>Median Monthly Mortgage repayments: </b>
+        <p1 th:text="${median_mortgageState}"></p1>
+        <br>
+        <b>Weekly rent: </b>
+        <p1 th:text="${median_rentState}"></p1>
+        <br>
+        <b>Weekly income: </b>
+        <p1 th:text="${median_incomeState}"></p1>
+        <br>
+       <!--
+        <b>LGA with highest homeless Population: </b>
+        <p1 th:text="${lga_highest}"></p1>
+       --> 
+    </div>
+
+    <div class="group_summary">
+        <b>Weekly income: </b>
+        <p1 th:text="${weekly_income}"></p1>
+        <br>
+        <b>Monthly Mortgage: </b>
+        <p1 th:text="${monthly_mortgage}"></p1>
+        <br>
+        <b>Weekly rent: </b>
+        <p1 th:text="${weekly_rent}"></p1>
+        <br>
+        <b>Sex: </b>
+        <p1 th:text="${sex}"></p1>
+        <br>
+        <b>Age Group: </b>
+        <p1 th:text="${age_group}"></p1>
+        <br>
+        <b>State: </b>
+        <p1 th:text="${state}"></p1>
+        <br>
+        <b>Group Population: </b>
+        <p1 th:text="${homelessGroup_population}"></p1>
+        <br>
+        <br>
+        <b>Total region population: </b>
+        <p1 th:text="${groupLGA_population}"></p1>
+        <br>
+        <b>LGAs that have the median specifications: </b>
+        <p1 th:text="${specified_numLGA}"></p1>
+    </div>
+
+
+    <div class="lgaratio_highest">
+        <b>Sorted group LGA</b>
+        <br>
+        <br>
+        <b th:text="${order}"></b>
+        <b th:text="${median_sorting}"></b>
+        <b th:text="${sorted_lga}"></b>
+        <br>
+        <b>Homeless to population ratio: </b>
+        <p1 th:text="${sorted_ratio_num}"></p1>
+    </div>
+
+    <div class="lgastate_pop">
+        <b>LGA with highest homeless population in state</b>
+        <br>
+        <br>
+        <b>State: </b>
+        <p1 th:text="${state}"></p1>
+        <br>
+        <b>LGA: </b>
+        <p1 th:text="${lga_highest}"></p1>
+    </div>
+
+
+        <!-- // Look up some information from JDBC
+        // First we need to use your JDBCConnection class
+        JDBCConnection jdbc = new JDBCConnection();
+
+        // Next we will ask this *class* for the LGAs
+        ArrayList<LGA> lgas = jdbc.getLGAs();
+
+        // Add HTML for the LGA list
+        html = html + "<h1>All LGAs</h1>" + "<ul>";
+
+        // Finally we can print out all of the LGAs
+        for (LGA lga : lgas) {
+            html = html + "<li>" + lga.getCode16()
+                        + " - " + lga.getName16() + "</li>";
+        } -->
+
+        <!-- // Finish the List HTML -->
+</ul>
+
+        <!-- // Close Content div -->
+</div>
+
+        <!-- // Footer -->
+            <div class='footer'>
+                <p>Homelessness Statistics In Depth LGA Page</p>
+            </div>
+
+        <!-- // Finish the HTML webpage -->
+</body></html>

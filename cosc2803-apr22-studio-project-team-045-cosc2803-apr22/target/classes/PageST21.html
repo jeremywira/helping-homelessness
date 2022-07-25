@@ -1,0 +1,128 @@
+<html>
+    <head> 
+        <title>LGA Statistics</title>
+        <link rel='stylesheet' type='text/css' href='common.css' />
+        <link rel = "icon" href = "homelesslogo.png" type = "image/x-icon">
+</head>
+
+<body>
+    <div class='header'>
+        <h1>
+            <a href='/'><img src='homelesslogo.png' class='top-image' alt='RMIT logo' height='50'></a>   
+        </h1>
+    </div>
+    <div class='topnav'>
+        <a href='/'>Home</a>
+        <a href='mission.html'>Our Mission</a>
+        <a href='page3.html'>LGA Statistics</a>
+        <a href='page5.html'>Advanced Statistics</a>
+        <a href='page6.html'>Trends</a>
+    </div>
+    <div class='LGAStats-Header'>
+        Local Government Area Statistics
+        </div>
+    <div class='content'>
+    <div class='ST21_advanced'>
+            <form action="/page3.html" method="post">
+                State: 
+                    <select name="state_select" id="state_select">
+                        <option th:each="states : ${States}" th:text="${states}" type="dropdown"></option>
+                        </select>
+                <br>
+                <br>
+                LGA: 
+                    <select name="lga_select" id="lga_select">
+                        <option th:each="LGA : ${LGA}" th:text="${LGA}" type="dropdown"></option>
+                        </select>
+                <br>
+                <br>
+            Sex: 
+                <select name="sex_select" id="sex_select">
+                    <option th:each="sex : ${Sex}" th:text="${sex}" type="dropdown"></option>
+                    </select> 
+            <br>
+            <br>
+            Age Range:
+                <select name="age_select" id="age_select">
+                    <option th:each="age : ${Age}" th:text="${age}" type="dropdown"></option>
+                </select>
+                    <br>
+                    <br>
+            Year:
+                <select name="year_select" id="year_select">
+                <option th:each="year : ${Year}" th:text="${year}" type="dropdown"></option>
+                </select>
+                <br>
+                <br>
+                Show for:
+                    <select name="area_select" id="area_select">
+                        <option th:each="area : ${Area}" th:text="${area}" type="dropdown"></option>
+                        </select>
+                        <br>
+                        <br>
+            <BUTTON type="submit" style="cursor: pointer;"> SUBMIT</BUTTON>
+            <!-- </ul> -->
+            </div>
+        <!-- </ul> -->
+
+<div class="lgaHomelessStats">
+    <br>
+    <p1><b>State: </b></p1><p1 th:text="${stateName}"></p1>
+    <br>
+    <br>
+    <p1><b>LGA: </b></p1><p1 th:text="${LGAName}"></p1>
+    <br>
+    <br>
+    <p1><b>Population: </b></p1><p1 th:text="${LGAPopulation}"></p1>
+    <br>
+    <p1><b>Area: </b></p1><p1 th:text="${LGAArea}"></p1>
+    <br>
+    <br>
+</div>
+<div class="selectStats">
+    <p1><b>Year: </b></p1><p1 th:text="${YearSelect}"></p1>
+    <br>
+    <p1><b>Age: </b></p1><p1 th:text="${AgeSelect}"></p1>
+    <br>
+    <p1><b>Sex: </b></p1><p1 th:text="${SexSelect}"></p1>
+    <br>
+    <br>
+    <p1><b>Homeless: </b></p1>
+    <p1 th:text="${homelessSelect}"></p1>
+    <br>
+    <p1><b>At Risk: </b></p1>
+    <p1 th:text="${atRiskSelect}"></p1>
+    <br>
+    <p1><b>Total: </b></p1>
+    <p1 th:text="${simpleStatsSelect}"></p1>
+    <br>
+    <p1><b>Percent of <p1 th:text="${areaSelected}"></p1>: </b></p1>
+    <p1 th:text="${simpleStatsPercent}"></p1><p1>%</p1>
+    <br>
+</div>
+
+<div class="likelyGroups">
+    <p1><b>Groups most likely to be homeless or at risk in </p1><p1 th:text="${LGAName}"></p1><p1>:</p1></b>
+    <br>
+    <p1>1. </p1><p1 th:text="${sex1}"></p1><p1 th:text="${agedBetween}"></p1></p1><p1 th:text="${age1}"></p1>
+    <br>
+    <p1>2. </p1><p1 th:text="${sex2}"></p1><p1 th:text="${agedBetween}"></p1><p1 th:text="${age2}"></p1>
+    <br>
+    <p1>3. </p1><p1 th:text="${sex3}"></p1><p1 th:text="${agedBetween}"></p1><p1 th:text="${age3}"></p1>
+    <br>
+    <p1>4. </p1><p1 th:text="${sex4}"></p1><p1 th:text="${agedBetween}"></p1><p1 th:text="${age4}"></p1>
+    <br>
+    <p1>5. </p1><p1 th:text="${sex5}"></p1><p1 th:text="${agedBetween}"></p1><p1 th:text="${age5}"></p1>
+</div>
+
+<!-- </ul> -->
+</div>
+
+<!-- <h2 class='lga_index' th:text="${male092018}"></h2> -->
+
+            <div class='footer'>
+                <p>Homelessness Statistics LGA Statistics Page 
+                </p>
+            </div>
+    </body></html>
+

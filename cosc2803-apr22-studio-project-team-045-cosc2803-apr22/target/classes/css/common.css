@@ -1,0 +1,367 @@
+/* External CSS style file */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  /* background: #f1f1f1; */
+  background: #e1f1fd;
+}
+
+/* Header (div) formatting */
+.header {
+  /* padding: 5px; */
+  text-align: center;
+  /* background-color:#ddd; */
+  background-color: #e1f1fd;
+  color: #000000;
+  float: none;
+}
+
+.header h1 {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+/* Make the logo have a rounded edge */
+img.top-image {
+  vertical-align: middle;
+}
+
+/* CSS Layout from W3Schools: https://www.w3schools.com/css/css_templates.asp */
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  float: none;
+  /* background-color: #333; */
+  background-color: #4663ac;
+  clear:both;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  /* background-color: #ddd; */
+  background-color: 	#c1d8f0;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  /* background-color: #ddd; */
+  background-color: #e1f1fd;
+  padding: 10px;
+}
+
+/* Style the footer */
+.footer {
+  /* background-color: #cccccc; */
+  background-color: #4663ac;
+  padding: 4px;
+  color: #f2f2f2;
+}
+
+/*our mission css*/
+img.left-image {
+  float: left;
+  vertical-align: middle;
+  padding: 10px;
+}
+/* img.ourMissionleft-image {
+ float: left;
+ padding-right: 50px;
+ max-height: 100%;
+} */
+.content a{
+ font-size: 30px;
+ padding-top: 10px;
+ text-align: center;
+}
+.container {
+ border: 2px #333;
+ /* background-color: #ddd; */
+ /* background-color: #c1d8f0; */
+ padding: 20px 40px 40px;
+ text-align: center;
+ height: 550px;
+}
+
+.container img {
+ height: 90%;
+ float: left;
+ vertical-align: middle;
+ padding-right: 40px;
+}
+.container b {
+ padding-left: 30px;
+}
+
+.LGAStats {
+  float: left;
+ padding: 0;
+ margin: 0;
+ border: 2px #333;
+ /* background-color: #ddd; */
+ background-color: #c1d8f0;
+ text-align: left;
+ height: 500px;
+ width: 500px;
+ /* position: absolute; */
+}
+.LGAStatsDisplay {
+  padding: 0;
+  margin: 0;
+  border: 2px #333;
+  /* background-color: #ddd; */
+  background-color: #c1d8f0;
+  text-align: left;
+  height: 500px;
+  float: right;
+  width: 744px;
+  padding-top: 145px;
+  /* position: absolute; */
+ }
+.LGAStats-Header {
+ text-align: center;
+ font-size: 20px;
+ padding-top: 5px;
+ /* background-color: #c1d8f0; */
+ background-color: #e1f1fd;
+}
+
+.aboutUs text {
+  display: inline;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: left;
+}
+
+ .index_drop {
+   position: relative;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   height: 180px;
+   width: 300px;
+   background-color: #000000;
+   color: white;
+   padding-top: 20px;
+   text-align: center;
+   border-radius: 25px;
+   margin-bottom: 20px;
+   margin-top: 20px;
+ }
+ 
+ .heading_one {
+   position: absolute;
+   padding-left: 400px;
+   margin-top: -160px;
+ }
+
+ .heading_two {
+   position: absolute;
+   margin-left: 400px;
+   margin-top: -80px;
+ }
+
+ .pop_index {
+   position: absolute;
+   margin-left: 900px;
+   margin-top: -160px;
+ }
+
+ .lga_index {
+   position: absolute;
+   padding-left: 900px;
+   margin-top: -80px;
+ }
+
+ .ST31_basic {
+   position: relative;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   height: 620px;
+   width: 250px;
+   background-color: #000000;
+   color: white;
+   padding-top: 20px;
+   text-align: center;
+   border-radius: 25px;
+   margin-bottom: 20px;
+   margin-top: 20px;
+ }
+
+ .ST31_advanced {
+   position: relative;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   height: 300px;
+   width: 250px;
+   background-color: #000000;
+   color: white;
+   padding-top: 20px;
+   text-align: center;
+   border-radius: 25px;
+   margin-bottom: 20px;
+   margin-top: 370px;
+ }
+ .ST21_advanced {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 320px;
+  width: 250px;
+  background-color: #000000;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: left;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.ST33_advanced {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 450px;
+  width: 250px;
+  background-color: #000000;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: left;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.lga_household {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -480px; 
+  border-style: solid;
+  padding: 20px;
+}
+
+.lgaHomelessStats {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -300px; 
+  border-style: solid;
+  padding: 20px;
+  width: 200px;
+}
+
+.selectStats {
+  position: absolute;
+  margin-left: 540px;
+  margin-top: -300px; 
+  border-style: solid;
+  padding: 20px;
+  width: 290px;
+}
+
+.lgaTrends {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -375px; 
+  border-style: solid;
+  padding: 20px;
+  width: 290px;
+}
+
+.lgaTrends1 {
+  position: absolute;
+  margin-left: 620px;
+  margin-top: -390px; 
+  /* border-style: solid; */
+  padding: 20px;
+  width: 450px;
+}
+
+.lgaTrendsChart {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -475px; 
+  padding: 20px;
+  width: 290px;
+}
+
+.likelyGroups {
+  position: absolute;
+  margin-left: 840px;
+  margin-top: -300px; 
+  /* border-style: solid; */
+  padding: 20px;
+  width: 450px;
+}
+
+.lefttop_ST31 {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -560px; 
+}
+
+.righttop_ST31 {
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -560px; 
+}
+
+.group_summary {
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -495px; 
+  border-style: solid;
+  padding: 20px;
+}
+
+.leftmiddle_ST31 {
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -290px;
+}
+
+.lgaratio_highest {
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -250px; 
+  border-style: solid;
+  padding: 20px;
+}
+
+.lgaratio_lowest {
+  position: absolute;
+  margin-left: 850px;
+  margin-top: -80px; 
+  border-style: solid;
+  padding: 20px;
+}
+
+.lgastate_pop {
+  position: relative;
+  margin-left: 850px;
+  margin-top: -110px; 
+  border-style: solid;
+  padding: 20px;
+}

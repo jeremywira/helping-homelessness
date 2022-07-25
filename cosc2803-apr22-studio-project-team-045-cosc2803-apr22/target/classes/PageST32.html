@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <title>Trends</title>
+        <link rel='stylesheet' type='text/css' href='common.css' />
+        <link rel = "icon" href = "homelesslogo.png" type = "image/x-icon">  
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script th:inline="javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+    //     var data = google.visualization.arrayToDataTable([
+    //       ['Year', 'Homeless', 'At Risk'],
+    //       ['2016',  1000,      400],
+    //       ['2018',  1170,      460]
+    //     ]);
+
+    //     var options = {
+    //       title: 'Homelessness Trends',
+    //       curveType: 'function',
+    //       legend: { position: 'bottom' }
+    //     };
+
+    //     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    //     chart.draw(data, options);
+    //   }
+    // var lineChartData = /*[[${pieChartData}]]*/ [];
+    // var series = [];
+    // var data = [];
+
+    // for (var i = 0; i < lineChartData.length; i++) {
+    //         var object = {};
+    //         object.name = pieChartData[i].count2016;
+    //         object.y = pieChartData[i].count2018;
+    //         data.push(object);
+    //     }
+    //     var seriesObject = {
+    //         name: 'Homelessness Trends',
+    //         colorByPoint: true,
+    //         data: data
+    //     };
+    //     series.push(seriesObject);
+    //     drawLineChart(series);
+
+    //     // draw the pie chart:
+    //     function drawLineChart(series) {
+    //         Highcharts.chart('chartContainer', {
+    //             chart: {
+    //                 plotBackgroundColor: null,
+    //                 plotBorderWidth: null,
+    //                 plotShadow: false,
+    //                 type: 'line'
+    //             },
+    //             title: {
+    //                 text: 'Homelessness Trends 1'
+    //             },
+    //             tooltip: {
+    //                 formatter: function () {
+    //                     return '<strong>' + this.key + ': </strong>' + this.y;
+    //                 }
+    //             },
+    //             plotOptions: {
+    //                 line: {
+    //                     allowPointSelect: true,
+    //                     cursor: 'pointer',
+    //                     dataLabels: {
+    //                         enabled: true,
+    //                         format: '<b>{point.name}</b>: {point.y}'
+    //                     }
+    //                 }
+    //             },
+    //             // use the series data defined earlier:
+    //             series: series
+    //         });
+    //     }
+
+    }
+    // )();
+
+    </script>
+  </head>
+<body>
+            <div class='header'>
+                <h1>
+                <a href='/'><img src='homelesslogo.png' class='top-image' alt='RMIT logo' height='50'></a> 
+                </h1>
+            </div>
+            <div class='topnav'>
+                <a href='/'>Home</a>
+                <a href='mission.html'>Our Mission</a>
+                <a href='page3.html'>LGA Statistics</a>
+                <a href='page5.html'>Advanced Statistics</a>
+                <a href='page6.html'>Trends</a>
+            </div>
+
+ <div class='LGAStats-Header'>
+        Trends Over the Years
+        </div>
+        <div class='Content'>
+            <div class='ST33_advanced'>
+                <form action="/page6.html" method="post">
+                    Show LGA with:
+                    <br>
+                <select name="bestWorstSelect" id="bestWorstSelect">
+                    <option th:each="bestWorst : ${BestWorst}" th:text="${bestWorst}" type="dropdown"></option>
+                </select>
+                <br>
+                <br>
+                OR Select your own:
+                <br>
+                <br>
+                    State: 
+                    <select name="state_select" id="state_select">
+                        <option th:each="states : ${States}" th:text="${states}" type="dropdown"></option>
+                        </select>
+                <br>
+                <br>
+                LGA: 
+                    <select name="lga_select" id="lga_select">
+                        <option th:each="LGA : ${LGA}" th:text="${LGA}" type="dropdown"></option>
+                        </select>
+                <br>
+                <br>
+            Sex: 
+                <select name="sex_select" id="sex_select">
+                    <option th:each="sex : ${Sex}" th:text="${sex}" type="dropdown"></option>
+                    </select> 
+            <br>
+            <br>
+            Age Range:
+                <select name="age_select" id="age_select">
+                    <option th:each="age : ${Age}" th:text="${age}" type="dropdown"></option>
+                </select>
+                    <br>
+                    <br>
+                    Status:
+                    <select name="status_select" id="status_select">
+                        <option th:each="status : ${Status}" th:text="${status}" type="dropdown"></option>
+                    </select>
+                    <br>
+                    <br>
+                    Show for: 
+                    <select name="area_select" id="area_select">
+                        <option th:each="area : ${Area}" th:text="${area}" type="dropdown"></option>
+                    </select>
+                <br>
+                <br>
+                    Show as:
+                    <select name="display_select" id="display_select">
+                        <option th:each="display : ${Display}" th:text="${display}" type="dropdown"></option>
+                    </select>
+                <br>
+                <br>
+                    <BUTTON style="align-items: center;"> SUBMIT</BUTTON></body>
+                </div>
+</ul>
+</div>
+
+<!-- <div class="lgaTrendsChart">
+    <div id="curve_chart" style="width: 900px; height: 400px"></div>
+</div> -->
+
+<div class="lgaTrends">
+    <p1><b>State: </b></p1><p1 th:text="${stateName}"></p1>
+    <br>
+    <p1><b>LGA: </b></p1><p1 th:text="${LGAName}"></p1>
+    <br>
+    <p1><b>2016 Total: </b></p1><p1 th:text="${total2016}"></p1>
+    <br>
+    <p1><b>2018 Total: </b></p1><p1 th:text="${total2018}"></p1>
+    <br>
+    <br>
+    <p1><b>Total Change: </b></p1>
+    <p1 th:text="${changeTotal}"></p1>
+    <br>
+    <p1><b>Percentage Change: </b></p1>
+    <p1 th:text="${changePct}"></p1><p1>%</p1>
+    <br>
+</div>
+
+<div class="lgaTrends1">
+    <p1><b>2016 Homeless: </b></p1><p1 th:text="${homeless2016}"></p1>
+    <br>
+    <p1><b>2018 Homeless: </b></p1><p1 th:text="${homeless2018}"></p1>
+    <br>
+    <p1><b>Homeless Change: </b></p1>
+    <p1 th:text="${changeHomeless}"></p1>
+    <br>
+    <p1><b>Homeless Change Percentage: </b></p1>
+    <p1 th:text="${changeHomelessPct}"></p1><p1>%</p1>
+    <br>
+    <br>
+    <p1><b>2016 At Risk: </b></p1><p1 th:text="${atRisk2016}"></p1>
+    <br>
+    <p1><b>2018 At Risk: </b></p1><p1 th:text="${atRisk2018}"></p1>
+    <br>
+    <p1><b>At Risk Change: </b></p1>
+    <p1 th:text="${changeAtRisk}"></p1>
+    <br>
+    <p1><b>At Risk Change Percentage: </b></p1>
+    <p1 th:text="${changeAtRiskPct}"></p1><p1>%</p1>
+    <br>
+</div>
+
+        <!-- // Footer -->
+            <div class='footer'>
+                <p>Homelessness Statistics Trends Page</p>
+            </div>
+
+        <!-- // Finish the HTML webpage -->
+</body></html>
